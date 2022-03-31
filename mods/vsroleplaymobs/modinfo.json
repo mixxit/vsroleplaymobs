@@ -1,0 +1,12 @@
+{
+    "type": "code",
+    "modid": "vsroleplaymobs",
+    "name": "vsroleplaymobs",
+    "authors": [ "mixxit" ],
+    "description": "Add RPG style mobs to Vintage Story",
+    "version": "1.16.4-rc.1",
+    "dependencies": {
+        "game": "1.16.4"
+    },
+    "side" : "Server"
+}
