@@ -75,15 +75,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="assets\vsroleplaymobs\itemtypes\creatures.json" />
+    <None Include="assets\vsroleplaymobs\textures\entity\goblin\goblin01.png" />
+    <None Include="assets\vsroleplaymobs\textures\entity\goblin\goblin02.png" />
+    <Content Include="assets\vsroleplaymobs\sounds\creature\wild-goblin\alerted.ogg" />
+    <Content Include="assets\vsroleplaymobs\sounds\creature\wild-goblin\die.ogg" />
+    <Content Include="assets\vsroleplaymobs\sounds\creature\wild-goblin\die2.ogg" />
+    <Content Include="assets\vsroleplaymobs\sounds\creature\wild-goblin\hit.ogg" />
+    <Content Include="assets\vsroleplaymobs\sounds\creature\wild-goblin\idlebreath.ogg" />
+    <Content Include="assets\vsroleplaymobs\sounds\creature\wild-goblin\panic.ogg" />
+    <Content Include="assets\vsroleplaymobs\sounds\creature\wild-goblin\smacked.ogg" />
     <Content Include="modinfo.json" />
+    <None Include="assets\vsroleplaymobs\entities\land\wild-goblin.json" />
+    <None Include="assets\vsroleplaymobs\shapes\entity\land\wild-goblin.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\Foundation\Extensions\ApiExtensions.cs" />
     <Compile Include="src\VSRoleplayMobsMod.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\" />
+    <None Include="assets\game\lang\en.json" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

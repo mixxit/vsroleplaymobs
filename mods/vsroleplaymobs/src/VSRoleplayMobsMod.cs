@@ -10,7 +10,6 @@ namespace vsroleplaymobds.src
 {
     public class VSRoleplayMobsMod : ModSystem
     {
-        Random rand;
         private ICoreServerAPI csapi;
 
         public override void StartPre(ICoreAPI api)
@@ -27,13 +26,18 @@ namespace vsroleplaymobds.src
         {
             this.csapi = api;
             base.StartServerSide(api);
+            api.Event.PlayerNowPlaying += new PlayerDelegate(OnPlayerNowPlaying);
+            
+        }
+
+        private void OnPlayerNowPlaying(IServerPlayer byPlayer)
+        {
+            //
         }
 
         public override void Start(ICoreAPI api)
         {
-            rand = new Random();
             base.Start(api);
-
         }
 
         public override double ExecuteOrder()
