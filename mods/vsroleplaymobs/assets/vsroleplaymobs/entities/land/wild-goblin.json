@@ -11,24 +11,32 @@
       "y":0.5
    },
    "eyeHeight":1.3,
-   "drops":[
-      {
-         "type":"item",
-         "code":"game:knife-flint",
-         "quantity":{
-            "avg":1.0,
-            "var":0
-         }
-      },
-      {
-         "type":"item",
-         "code":"game:poultice-reed-horsetail",
-         "quantity":{
-            "avg":0.8,
-            "var":0
-         }
-      }
-   ],
+    "drops": [
+        {
+            "type": "item",
+            "code": "game:knife-flint",
+            "quantity": {
+                "avg": 1.0,
+                "var": 0
+            }
+        },
+        {
+            "type": "item",
+            "code": "game:poultice-reed-horsetail",
+            "quantity": {
+                "avg": 0.8,
+                "var": 0
+            }
+        },
+        {
+            "type": "item",
+            "code": "game:bushmeat-cooked",
+            "quantity": {
+                "avg": 1.0,
+                "var": 0
+            }
+        }
+    ],
    "client":{
       "renderer":"Shape",
       "shape":{
@@ -120,368 +128,314 @@
          }
       ]
    },
-   "server":{
-      "behaviors":[
-         {
-            "code":"repulseagents"
-         },
-         {
-            "code":"controlledphysics",
-            "stepHeight":1.0001
-         },
-         {
-            "code":"despawn",
-            "minPlayerDistance":8,
-            "belowLightLevel":8,
-            "minSeconds":300
-         },
-         {
-            "code":"health",
-            "currenthealth":25,
-            "maxhealth":25
-         },
-         {
-            "code":"deaddecay",
-            "hoursToDecay":96,
-            "decayedBlock":"carcass-medium"
-         },
-         {
-            "code":"floatupwhenstuck",
-            "onlyWhenDead":true
-         },
-         {
-            "code":"harvestable",
-            "drops":[
-               {
-                  "type":"item",
-                  "code":"gear-rusty",
-                  "quantity":{
-                     "avg":0.04,
-                     "var":0
-                  }
-               },
-               {
-                  "type":"item",
-                  "code":"leather",
-                  "quantity":{
-                     "avg":0.06552,
-                     "var":0
-                  }
-               },
-               {
-                  "type":"item",
-                  "code":"bone",
-                  "quantity":{
-                     "avg":3.0,
-                     "var":0.5
-                  }
-               },
-               {
-                  "type":"item",
-                  "code":"bushmeat",
-                  "quantity":{
-                     "avg":2.0,
-                     "var":0.5
-                  }
-               }
-            ]
-         },
-         {
-            "code":"breathe"
-         },
-         {
-            "code":"emotionstates",
-            "states":[
-               {
-                  "code":"fleeondamage",
-                  "duration":60,
-                  "chance":1,
-                  "slot":2,
-                  "priority":5,
-                  "accumType":"max",
-                  "whenHealthRelBelow":0.3
-               },
-               {
-                  "code":"saturated",
-                  "duration":1200,
-                  "chance":1,
-                  "slot":0,
-                  "priority":1,
-                  "accumType":"sum"
-               },
-               {
-                  "code":"aggressiveondamage",
-                  "duration":45,
-                  "chance":1,
-                  "slot":2,
-                  "priority":2,
-                  "accumType":"noaccum"
-               },
-               {
-                  "code":"alarmherdondamage",
-                  "chance":1,
-                  "slot":1,
-                  "prority":1,
-                  "accumType":"max"
-               }
-            ]
-         },
-         {
-            "code":"taskai",
-            "aitasks":[
-                {
-                    "code": "meleeattack",
-                    "entityCodes": [
-                        "player",
-                        "drifter-normal",
-                        "drifter-deep",
-                        "drifter-tainted",
-                        "drifter-corrupt",
-                        "drifter-nightmare",
-                        "chicken-rooster",
-                        "chicken-hen",
-                        "chicken-baby"
-                    ],
-                    "priority": 2,
-                    "damage": 5,
-                    "damageTier": 2,
-                    "slot": 1,
-                    "mincooldown": 2500,
-                    "maxcooldown": 3500,
-                    "minDist": 1.4,
-                    "minVerDist": 1.4,
-                    "attackDurationMs": 1000,
-                    "damagePlayerAtMs": 600,
-                    "animation": "SwordHit2",
-                    "animationSpeed": 0.8,
-                    "sound": "creature/wild-goblin/hit"
-                },
-                {
-                    "code": "meleeattack",
-                    "entityCodes": [
-                        "player",
-                        "drifter-normal",
-                        "drifter-deep",
-                        "drifter-tainted",
-                        "drifter-corrupt",
-                        "drifter-nightmare",
-                        "chicken-rooster",
-                        "chicken-hen",
-                        "chicken-baby"
-                    ],
-                    "priority": 2.1,
-                    "damage": 7,
-                    "damageTier": 2,
-                    "slot": 1,
-                    "mincooldown": 2500,
-                    "maxcooldown": 3500,
-                    "minDist": 1.4,
-                    "minVerDist": 1.4,
-                    "attackDurationMs": 1000,
-                    "damagePlayerAtMs": 600,
-                    "animation": "SwordHit",
-                    "animationSpeed": 1,
-                    "sound": "creature/wild-goblin/hit"
-                },
-               {
-                  "code":"seekentity",
-                  "entityCodes":[
-                     "player",
-                     "drifter-normal",
-                     "drifter-deep",
-                     "drifter-tainted",
-                     "drifter-corrupt",
-                     "drifter-nightmare",
-                     "chicken-rooster",
-                     "chicken-hen",
-                     "chicken-baby"
-                  ],
-                  "priority":1.6,
-                  "movespeed":0.025,
-                  "seekingRange":30,
-                  "animation":"Walk",
-                  "animationSpeed":1,
-                  "sound":"creature/wild-goblin/alerted",
-                  "soundRange":80,
-                  "whenNotInEmotionState":"saturated"
-               },
-                {
-                    "code": "fleeentity",
-                    "entityCodes": [
-                        "player",
-                        "drifter-normal",
-                        "drifter-deep",
-                        "drifter-tainted",
-                        "drifter-corrupt",
-                        "drifter-nightmare"
-                    ],
-                    "priority": 1,
-                    "movespeed": 0.035,
-                    "seekingRange": 20,
-                    "fleeingDistance": 64,
-                    "fleeDurationMs": 9999999,
-                    "minDayLightByType": {
-                        "*-regular": 0.925
+    "server": {
+        "behaviors": [
+            {
+                "code": "repulseagents"
+            },
+            {
+                "code": "controlledphysics",
+                "stepHeight": 1.0001
+            },
+            {
+                "code": "despawn",
+                "minPlayerDistance": 8,
+                "belowLightLevel": 8,
+                "minSeconds": 300
+            },
+            {
+                "code": "health",
+                "currenthealth": 25,
+                "maxhealth": 25
+            },
+            {
+                "code": "deaddecay",
+                "hoursToDecay": 96,
+                "decayedBlock": "carcass-medium"
+            },
+            {
+                "code": "floatupwhenstuck",
+                "onlyWhenDead": true
+            },
+            {
+                "code": "harvestable",
+                "drops": [
+                    {
+                        "type": "item",
+                        "code": "gear-rusty",
+                        "quantity": {
+                            "avg": 0.04,
+                            "var": 0
+                        }
                     },
-                    "cancelOnHurt": true,
-                    "executionChance": 0.003,
-                    "sound": "creature/wild-goblin/panic",
-                    "soundRange": 120,
-                    "animation": "Sprint",
-                    "animationSpeed": 1.3
-                },
-                {
-                    "code": "fleeentity",
-                    "entityCodes": [
-                        "player",
-                        "drifter-normal",
-                        "drifter-deep",
-                        "drifter-tainted",
-                        "drifter-corrupt",
-                        "drifter-nightmare"
-                    ],
-                    "priority": 2.5,
-                    "movespeed": 0.035,
-                    "seekingRange": 12,
-                    "cancelOnHurt": true,
-                    "sound": "creature/wild-goblin/panic",
-                    "soundRange": 120,
-                    "whenInEmotionState": "fleeondamage",
-                    "animation": "Sprint",
-                    "animationSpeed": 1.3
-                },
-               {
-                  "code":"getoutofwater",
-                  "priority":1.4,
-                  "movespeed":0.013,
-                  "animation":"Walk",
-                  "animationSpeed":1
-               },
-               {
-                  "code":"idle",
-                  "priority":1.3,
-                  "priorityForCancel":1.35,
-                  "minduration":4680,
-                  "maxduration":4680,
-                  "mincooldown":80000,
-                  "maxcooldown":500000,
-                  "animation":"idle1",
-                  "animationSpeed":1
-               },
-                {
-                    "code": "idle",
-                    "priority": 1.2,
-                    "priorityForCancel": 1.35,
-                    "minduration": 3120,
-                    "maxduration": 3120,
-                    "mincooldown": 50000,
-                    "maxcooldown": 400000,
-                    "animation": "idle2",
-                    "animationSpeed": 1,
-                    "sound": "creature/wild-goblin/idlebreath",
-                    "soundRange": 20
-                },
-               {
-                  "code":"wander",
-                  "priority":1.0,
-                  "priorityForCancel":1.35,
-                  "movespeed":0.015,
-                  "animation":"Walk",
-                  "preferredLightLevel":20
-               },
-               {
-                  "code":"seekfoodandeat",
-                  "movespeed":0.012,
-                  "priority":1.25,
-                  "eatTime":2.3,
-                  "eatLooseItems":true,
-                  "eatItemCategories":[
-                     "Vegetable",
-                     "Grain"
-                  ],
-                  "animation":"Walk",
-                  "eatAnimation":"eat",
-                  "mincooldownHours":1,
-                  "maxcooldownHours":4,
-                  "animationSpeed":1.4
-               },
-               {
-                  "code":"stayclosetoentity",
-                  "priority":2.5,
-                  "entityCode":[
-                     "wild-goblin",
-                     "wild-goblin_spear"
-                  ],
-                  "movespeed":0.025,
-                  "maxDistance":10,
-                  "searchRange":30,
-                  "animation":"Sprint"
-               },
-               {
-                  "code":"lookaround",
-                  "animation":"idle",
-                  "priority":0.5
-               }
-            ]
-         }
-      ],
-      "spawnconditions":{
-         "worldgen":{
-            "TriesPerChunk":{
-               "avg":0.07,
-               "var":0
+                    {
+                        "type": "item",
+                        "code": "leather",
+                        "quantity": {
+                            "avg": 0.06552,
+                            "var": 0
+                        }
+                    },
+                    {
+                        "type": "item",
+                        "code": "bone",
+                        "quantity": {
+                            "avg": 3.0,
+                            "var": 0.5
+                        }
+                    },
+                    {
+                        "type": "item",
+                        "code": "bushmeat",
+                        "quantity": {
+                            "avg": 2.0,
+                            "var": 0.5
+                        }
+                    }
+                ]
             },
-            "tryOnlySurface":true,
-            "groupSize":{
-               "dist":"verynarrowgaussian",
-               "avg":2,
-               "var":3
+            {
+                "code": "breathe"
             },
-            "insideBlockCodes":[
-               "game:air",
-               "game:tallgrass-*",
-               "game:snowlayer-1",
-               "game:frostedtallgrass-*"
-            ],
-            "minTemp":-15,
-            "maxTemp":15,
-            "minRain":0.25,
-            "minForest":0.5,
-            "companions":[
-               "wild-goblin",
-               "wild-goblin_spear"
-            ]
-         },
-         "runtime":{
-            "group":"hostile",
-            "tryOnlySurface":true,
-            "chance":0.003,
-            "maxQuantity":4,
-            "__comment":"Make them spawn away from artifical light so they don't spawn inside farmland",
-            "maxLightLevel":8,
-            "lightLevelType":"onlyBlockLight",
-            "groupSize":{
-               "dist":"verynarrowgaussian",
-               "avg":2,
-               "var":3
+            {
+                "code": "emotionstates",
+                "states": [
+                    {
+                        "code": "fleeondamage",
+                        "duration": 10,
+                        "chance": 0.15,
+                        "slot": 2,
+                        "priority": 5,
+                        "accumType": "max",
+                        "whenHealthRelBelow": 0.3
+                    },
+                    {
+                        "code": "saturated",
+                        "duration": 1200,
+                        "chance": 1,
+                        "slot": 0,
+                        "priority": 1,
+                        "accumType": "sum"
+                    },
+                    {
+                        "code": "aggressiveondamage",
+                        "duration": 45,
+                        "chance": 1,
+                        "slot": 2,
+                        "priority": 2,
+                        "accumType": "noaccum"
+                    },
+                    {
+                        "code": "alarmherdondamage",
+                        "chance": 1,
+                        "slot": 1,
+                        "prority": 1,
+                        "accumType": "max"
+                    }
+                ]
             },
-            "insideBlockCodes":[
-               "game:air",
-               "game:tallgrass-*",
-               "game:snowlayer-1",
-               "game:frostedtallgrass-*"
-            ],
-            "minTemp":-15,
-            "maxTemp":15,
-            "minRain":0.25,
-            "minForest":0.5,
-            "companions":[
-               "wild-goblin",
-               "wild-goblin_spear"
-            ]
-         }
-      }
-   },
+            {
+                "code": "taskai",
+                "aitasks": [
+                    {
+                        "code": "meleeattack",
+                        "entityCodes": [
+                            "player",
+                            "drifter-normal",
+                            "drifter-deep",
+                            "drifter-tainted",
+                            "drifter-corrupt",
+                            "drifter-nightmare",
+                            "chicken-rooster",
+                            "chicken-hen",
+                            "chicken-baby"
+                        ],
+                        "priority": 2,
+                        "damage": 5,
+                        "damageTier": 2,
+                        "slot": 1,
+                        "mincooldown": 2500,
+                        "maxcooldown": 3500,
+                        "minDist": 1.4,
+                        "minVerDist": 1.4,
+                        "attackDurationMs": 1000,
+                        "damagePlayerAtMs": 600,
+                        "animation": "SwordHit2",
+                        "animationSpeed": 0.8,
+                        "sound": "creature/wild-goblin/hit"
+                    },
+                    {
+                        "code": "meleeattack",
+                        "entityCodes": [
+                            "player",
+                            "drifter-normal",
+                            "drifter-deep",
+                            "drifter-tainted",
+                            "drifter-corrupt",
+                            "drifter-nightmare",
+                            "chicken-rooster",
+                            "chicken-hen",
+                            "chicken-baby"
+                        ],
+                        "priority": 2.1,
+                        "damage": 7,
+                        "damageTier": 2,
+                        "slot": 1,
+                        "mincooldown": 2500,
+                        "maxcooldown": 3500,
+                        "minDist": 1.4,
+                        "minVerDist": 1.4,
+                        "attackDurationMs": 1000,
+                        "damagePlayerAtMs": 600,
+                        "animation": "SwordHit",
+                        "animationSpeed": 1,
+                        "sound": "creature/wild-goblin/hit"
+                    },
+                    {
+                        "code": "seekentity",
+                        "entityCodes": [
+                            "player",
+                            "chicken-rooster",
+                            "chicken-hen",
+                            "chicken-baby"
+                        ],
+                        "priority": 1.6,
+                        "movespeed": 0.025,
+                        "seekingRange": 30,
+                        "animation": "Walk",
+                        "animationSpeed": 1,
+                        "sound": "creature/wild-goblin/alerted",
+                        "soundRange": 80,
+                        "whenNotInEmotionState": "saturated"
+                    },
+                    {
+                        "code": "fleeentity",
+                        "entityCodes": [
+                            "player"
+                        ],
+                        "priority": 1,
+                        "movespeed": 0.035,
+                        "seekingRange": 20,
+                        "fleeingDistance": 64,
+                        "fleeDurationMs": 9999999,
+                        "minDayLightByType": {
+                            "*-regular": 0.925
+                        },
+                        "cancelOnHurt": true,
+                        "executionChance": 0.003,
+                        "sound": "creature/wild-goblin/panic",
+                        "soundRange": 120,
+                        "animation": "Sprint",
+                        "animationSpeed": 1.3
+                    },
+                    {
+                        "code": "fleeentity",
+                        "entityCodes": [
+                            "player"
+                        ],
+                        "priority": 2.5,
+                        "movespeed": 0.035,
+                        "seekingRange": 12,
+                        "cancelOnHurt": true,
+                        "sound": "creature/wild-goblin/panic",
+                        "soundRange": 120,
+                        "whenInEmotionState": "fleeondamage",
+                        "animation": "Sprint",
+                        "animationSpeed": 1.3
+                    },
+                    {
+                        "code": "getoutofwater",
+                        "priority": 1.4,
+                        "movespeed": 0.013,
+                        "animation": "Walk",
+                        "animationSpeed": 1
+                    },
+                    {
+                        "code": "idle",
+                        "priority": 1.3,
+                        "priorityForCancel": 1.35,
+                        "minduration": 4680,
+                        "maxduration": 4680,
+                        "mincooldown": 80000,
+                        "maxcooldown": 500000,
+                        "animation": "idle1",
+                        "animationSpeed": 1
+                    },
+                    {
+                        "code": "idle",
+                        "priority": 1.2,
+                        "priorityForCancel": 1.35,
+                        "minduration": 3120,
+                        "maxduration": 3120,
+                        "mincooldown": 50000,
+                        "maxcooldown": 400000,
+                        "animation": "idle2",
+                        "animationSpeed": 1,
+                        "sound": "creature/wild-goblin/idlebreath",
+                        "soundRange": 20
+                    },
+                    {
+                        "code": "wander",
+                        "priority": 1.0,
+                        "priorityForCancel": 1.35,
+                        "movespeed": 0.015,
+                        "animation": "Walk",
+                        "preferredLightLevel": 20
+                    },
+                    {
+                        "code": "seekfoodandeat",
+                        "movespeed": 0.012,
+                        "priority": 1.25,
+                        "eatTime": 2.3,
+                        "eatLooseItems": true,
+                        "eatItemCategories": [
+                            "Vegetable",
+                            "Grain"
+                        ],
+                        "animation": "Walk",
+                        "eatAnimation": "eat",
+                        "mincooldownHours": 1,
+                        "maxcooldownHours": 4,
+                        "animationSpeed": 1.4
+                    },
+                    {
+                        "code": "stayclosetoentity",
+                        "priority": 2.5,
+                        "entityCode": [
+                            "wild-goblin",
+                            "wild-goblin_spear"
+                        ],
+                        "movespeed": 0.025,
+                        "maxDistance": 10,
+                        "searchRange": 30,
+                        "animation": "Sprint"
+                    },
+                    {
+                        "code": "lookaround",
+                        "animation": "idle",
+                        "priority": 0.5
+                    }
+                ]
+            }
+        ],
+        "spawnconditions": {
+            "runtime": {
+                "group": "hostile",
+                "maxQuantity": 14,
+                "maxLightLevel": 9,
+                "chance": 0.1,
+                "lightLevelType": "MaxTimeOfDayLight",
+                "groupSize": {
+                    "dist": "uniform",
+                    "avg": 1.5,
+                    "var": 0.5
+                },
+                "insideBlockCodes": [ "game:air", "game:tallgrass-*" ],
+                "minY": 0.85,
+                "maxY": 2
+            }
+        }
+    },
    "sounds":{
       "hurt":"creature/wild-goblin/hit",
       "death":"creature/wild-goblin/die",

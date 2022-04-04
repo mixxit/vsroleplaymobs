@@ -4,7 +4,7 @@
     "name": "vsroleplaymobs",
     "authors": [ "mixxit", "SirLordDilbert" ],
     "description": "Add RPG style mobs to Vintage Story",
-    "version": "1.16.4-rc.1",
+    "version": "1.16.4-rc.2",
     "dependencies": {
         "game": "1.16.4"
     },
