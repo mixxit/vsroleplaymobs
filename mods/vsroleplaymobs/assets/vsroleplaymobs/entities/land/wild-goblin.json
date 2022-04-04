@@ -27,14 +27,6 @@
                 "avg": 0.8,
                 "var": 0
             }
-        },
-        {
-            "type": "item",
-            "code": "game:bushmeat-cooked",
-            "quantity": {
-                "avg": 1.0,
-                "var": 0
-            }
         }
     ],
    "client":{
@@ -160,14 +152,6 @@
             {
                 "code": "harvestable",
                 "drops": [
-                    {
-                        "type": "item",
-                        "code": "gear-rusty",
-                        "quantity": {
-                            "avg": 0.04,
-                            "var": 0
-                        }
-                    },
                     {
                         "type": "item",
                         "code": "leather",
